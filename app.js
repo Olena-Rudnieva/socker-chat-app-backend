@@ -20,17 +20,13 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: '*',
+    origin: 'http://localhost:5173',
     methods: ['GET', 'POST'],
   },
 });
 
 app.use('/api/users', usersRouter);
 app.use('/api/chats', chatsRouter);
-
-app.set('io', io);
-
-require('./socket')(io);
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Not found' });

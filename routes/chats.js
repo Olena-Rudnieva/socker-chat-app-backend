@@ -6,7 +6,7 @@ const {
   createChat,
   updateChat,
   deleteChat,
-  // addMessage,
+  addMessage,
   autoResponse,
 } = require('../controllers/chats');
 
@@ -20,7 +20,7 @@ router.put('/:id', updateChat);
 
 router.delete('/:id', deleteChat);
 
-// router.post('/:id/message', addMessage);
+router.post('/:id/message', addMessage);
 
 router.post('/auto-response', autoResponse);
 
